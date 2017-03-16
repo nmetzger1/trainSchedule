@@ -1,6 +1,10 @@
+body{
+    background-color: black;
+}
+
 .header{
-    background-color: gainsboro;
-    color: red;
+    background-color: black;
+    color: white;
     border: solid 1px white;
     margin: .25%;
     text-align: center;
