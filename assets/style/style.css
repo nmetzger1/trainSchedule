@@ -1,0 +1,13 @@
+.header{
+    background-color: gainsboro;
+    color: red;
+    border: solid 1px white;
+    margin: .25%;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+#table-header th{
+    border-top: 0;
+}
