@@ -6,12 +6,25 @@ body{
     background-color: black;
     color: white;
     border: solid 1px white;
-    margin: .25%;
+    margin: 2.25%;
     text-align: center;
     padding-top: 2%;
     padding-bottom: 2%;
 }
 
+.header h1{
+    font-family: 'Holtwood One SC', serif;
+}
+
+.panel-heading{
+    font-family: 'Holtwood One SC', serif;
+}
+
 #table-header th{
     border-top: 0;
+}
+
+.table td{
+    font-family: 'Permanent Marker', cursive;
+    font-size: large;
 }

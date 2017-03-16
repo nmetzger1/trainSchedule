@@ -69,7 +69,7 @@ $().ready(function () {
         newRow.append($('<td>' + snap.val().name + '</td>'));
         newRow.append($('<td>' + snap.val().destination + '</td>'));
         newRow.append($('<td>' + snap.val().frequency + '</td>'));
-        newRow.append($('<td>' + nextArrival.format("HH:mm") + '</td>'));
+        newRow.append($('<td>' + nextArrival.format("hh:mm A") + '</td>'));
         newRow.append($('<td>' + minutesAway + '</td>'));
         newRow.append($('<td><button class="delete-row" data-row = "' + snap.getKey() + '"><span class="glyphicon glyphicon-remove"></span></button>'));
 
