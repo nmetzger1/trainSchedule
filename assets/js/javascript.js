@@ -51,17 +51,24 @@ $().ready(function () {
         var timeFound = false;
         var nextArrival = startTime;
         var now = moment();
+        var minutesAway;
 
         //Get next arrival time
         while(timeFound === false){
-            if(nextArrival >= now){
-                timeFound = true;
-                //Get minutes until next arrival
-                var minutesAway = moment(nextArrival).diff(now, 'minutes');
+            if(moment(nextArrival, "H:m", true).isValid()){
+                if(nextArrival >= now){
+                    timeFound = true;
+                    //Get minutes until next arrival
+                    minutesAway = moment(nextArrival).diff(now, 'minutes');
+                }
+                else {
+                    nextArrival.add(frequency, 'm');
+                }
             }
             else {
-                nextArrival.add(frequency, 'm');
+                break;
             }
+
         }
 
         //Create Row
@@ -69,7 +76,7 @@ $().ready(function () {
         newRow.append($('<td>' + snap.val().name + '</td>'));
         newRow.append($('<td>' + snap.val().destination + '</td>'));
         newRow.append($('<td>' + snap.val().frequency + '</td>'));
-        newRow.append($('<td>' + nextArrival.format("hh:mm A") + '</td>'));
+        newRow.append($('<td>' + nextArrival.format("h:mm A") + '</td>'));
         newRow.append($('<td>' + minutesAway + '</td>'));
         newRow.append($('<td><button class="delete-row" data-row = "' + snap.getKey() + '"><span class="glyphicon glyphicon-remove"></span></button>'));
 
